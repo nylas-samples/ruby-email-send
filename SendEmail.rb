@@ -13,7 +13,7 @@ nylas = Nylas::API.new(
 begin
 # Send your email
 	message = nylas.send!(to: [{ email: ENV["RECIPIENT_ADDRESS"], name: "Recipient name" }],
-										subject: "With Love, from Nylas", body: "Well well well...")
+			      subject: "With Love, from Nylas", body: "Well well well...")
 	puts "Message \"#{message.subject}\" was sent with ID #{message.id}"	
 rescue => error
 # Something went wrong

@@ -40,7 +40,11 @@ Run the script using the `ruby` command:
 $ ruby SendEmail.rb
 ```
 
-When your message is successfully sent, you'll get all the output information in your terminal:
+When your message is successfully sent, you'll get the following output in your terminal:
+
+```bash
+Message "With Love, from Nylas" was sent with ID 111111111111111111
+```
 
 ## Learn more
 

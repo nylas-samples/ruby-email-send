@@ -15,4 +15,4 @@ request_body = {
 }
 
 email, _ = nylas.messages.send(identifier: ENV["GRANT_ID"], request_body: request_body)
-puts email
+puts "Message \"#{email[:subject]}\" was sent with ID #{email[:id]}"

@@ -4,7 +4,8 @@ require 'nylas'
 
 # Initialize Nylas client
 nylas = Nylas::Client.new(
-    api_key: ENV["V3_TOKEN"]
+    api_key: ENV["V3_TOKEN"],
+    api_uri: ENV["NYLAS_API_URI"]
 )
 
 request_body = {

@@ -1,21 +1,19 @@
-#!/usr/bin/env ruby
-# Import your dependencies
+# Load gems
 require 'dotenv/load'
-require 'nylas'
+require 'nylas'	
 
-# Initialize your Nylas API client
-nylas = Nylas::API.new(
-    app_id: ENV["CLIENT_ID"],
-    app_secret: ENV["CLIENT_SECRET"],
-    access_token: ENV["ACCESS_TOKEN"]
+# Initialize Nylas client
+nylas = Nylas::Client.new(
+    api_key: ENV["V3_TOKEN"],
+    api_uri: ENV["NYLAS_API_URI"]
 )
 
-begin
-# Send your email
-	message = nylas.send!(to: [{ email: ENV["RECIPIENT_ADDRESS"], name: "Recipient name" }],
-			      subject: "With Love, from Nylas", body: "Well well well...")
-	puts "Message \"#{message.subject}\" was sent with ID #{message.id}"	
-rescue => error
-# Something went wrong
-	puts error.message
-end
+request_body = {
+    subject: "With Love, from Nylas",
+    body: "This email was sent using the <b>Ruby SDK</b> for the Nylas Email API. 
+           Visit <a href='https://nylas.com'>Nylas.com</a> for details.",
+    to: [{name: ENV["RECIPIENT_NAME"], email: ENV["RECIPIENT_ADDRESS"]}],
+}
+
+email, _ = nylas.messages.send(identifier: ENV["GRANT_ID"], request_body: request_body)
+puts "Message \"#{email[:subject]}\" was sent with ID #{email[:id]}"

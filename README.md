@@ -1,8 +1,8 @@
 # ruby-email-send
 
-This sample will show you to easily send an email with the Nylas Ruby SDK.
+This sample will show you to easily send your email with the Nylas Ruby SDK.
 
-You can follow along step-by-step in our blog post ["How to Send Emails with the Nylas Ruby SDK"](https://www.nylas.com/blog/how-to-send-emails-with-the-nylas-ruby-sdk/).
+You can follow along step-by-step in our blog post ["How to Read Email Inbox Data with the Nylas Ruby SDK"](https://www.nylas.com/blog/how-to-read-email-inbox-data-with-nylas-ruby-sdk/).
 
 ## Setup
 
@@ -15,10 +15,8 @@ You can follow along step-by-step in our blog post ["How to Send Emails with the
 You'll need the following values:
 
 ```text
-ACCESS_TOKEN =
-CLIENT_ID =
-CLIENT_SECRET =
-RECIPIENT_ADDRESS =
+V3_TOKEN =
+GRANT_ID =
 ```
 
 Add the above values to a new `.env` file:
@@ -44,7 +42,7 @@ $ ruby SendEmail.rb
 
 When your message is successfully sent, you'll get the following output in your terminal:
 
-```text
+```bash
 Message "With Love, from Nylas" was sent with ID 111111111111111111
 ```
 

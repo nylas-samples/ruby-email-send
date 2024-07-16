@@ -15,8 +15,10 @@ You can follow along step-by-step in our blog post ["How to Read Email Inbox Dat
 You'll need the following values:
 
 ```text
-V3_TOKEN =
-GRANT_ID =
+NYLAS_API_KEY=
+NYLAS_API_URI=
+NYLAS_GRANT_ID=
+RECIPIENT_EMAIL=
 ```
 
 Add the above values to a new `.env` file:
